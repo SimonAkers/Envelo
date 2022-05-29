@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Envelo</string>
 
-    <string name="login_failed">Login failed, online features unavailable</string>
+    <string name="login_failed">Something went wrong during sign in. Some features may be unavailable.</string>
 </resources>
