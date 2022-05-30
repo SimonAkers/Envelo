@@ -102,12 +102,15 @@ public class SignInActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.login_failed, Toast.LENGTH_LONG).show();
     }
 
+    /**
+     * Prompts the user to skip Google sign in.
+     */
     private void skipLogin() {
         // TODO: Save that the user skipped as a preference so they don't have to skip every time
         new AlertDialog.Builder(this)
             .setMessage(R.string.login_skip_msg)
             .setTitle(R.string.login_skip_title)
-                .setIcon(R.drawable.ic_cloud_off)
+            .setIcon(R.drawable.ic_cloud_off)
             .setPositiveButton(R.string.yes, (di, i) -> showMain())
             .setNegativeButton(R.string.no, null)
             .show();
