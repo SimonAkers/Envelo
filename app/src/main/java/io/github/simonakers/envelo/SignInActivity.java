@@ -4,9 +4,11 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -25,6 +27,9 @@ public class SignInActivity extends AppCompatActivity {
     /** A callback for when the user finishes signing in */
     private final ActivityResultCallback<ActivityResult> onActivityResult = result -> {
         if (result.getResultCode() == RESULT_OK) {
+            // If not logged in somehow, say that login failed but proceed to next activity anyways
+            if (!isLoggedIn()) showLoginFailed();
+
             showMain();
         } else {
             showLoginFailed();
@@ -51,7 +56,9 @@ public class SignInActivity extends AppCompatActivity {
 
         // Set the callback for the sign in button
         GoogleSignInClient gsc = GoogleSignIn.getClient(this, gso);
-        findViewById(R.id.btn_sign_in).setOnClickListener(view -> signIn.launch(gsc.getSignInIntent()));
+        findViewById(R.id.btn_sign_in).setOnClickListener(v -> signIn.launch(gsc.getSignInIntent()));
+
+        findViewById(R.id.btn_skip).setOnClickListener(v -> skipLogin());
     }
 
     @Override
@@ -62,6 +69,9 @@ public class SignInActivity extends AppCompatActivity {
         if (isLoggedIn()) showMain();
     }
 
+    /**
+     * Shows the splash screen for the configured amount of time.
+     */
     private void showSplashScreen() {
         SplashScreen splash = SplashScreen.installSplashScreen(this);
 
@@ -92,13 +102,21 @@ public class SignInActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.login_failed, Toast.LENGTH_LONG).show();
     }
 
+    private void skipLogin() {
+        // TODO: Save that the user skipped as a preference so they don't have to skip every time
+        new AlertDialog.Builder(this)
+            .setMessage(R.string.login_skip_msg)
+            .setTitle(R.string.login_skip_title)
+                .setIcon(R.drawable.ic_cloud_off)
+            .setPositiveButton(R.string.yes, (di, i) -> showMain())
+            .setNegativeButton(R.string.no, null)
+            .show();
+    }
+
     /**
      * Shows the main activity and closes this activity.
      */
     private void showMain() {
-        // If not logged in, say that login failed but proceed to next activity anyways
-        if (!isLoggedIn()) showLoginFailed();
-
         // Start main activity and clear activity backstack
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);

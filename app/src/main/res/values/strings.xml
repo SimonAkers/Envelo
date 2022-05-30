@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">Envelo</string>
 
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- This string should be all lowercase! -->
+    <string name="tag_line">budgeting made simple</string>
+
     <string name="login_failed">Something went wrong during sign in. Some features may be unavailable.</string>
+    <string name="login_skip_btn">Skip</string>
+    <string name="login_skip_title">Skip sign in</string>
+    <string name="login_skip_msg">
+        Signing in with Google allows your app data to be backed up to your Google Drive. You can sign in later from the settings menu.\n\nContinue without signing in?</string>
 </resources>
