@@ -17,4 +17,16 @@
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.App.starting" parent="Theme.SplashScreen">
+        <!--Set the splash screen background, animated icon, and animation duration.-->
+        <item name="windowSplashScreenBackground">?android:colorBackground</item>
+        <!-- Use windowSplashScreenAnimatedIcon to add either a drawable or an
+        animated drawable. One of these is required-->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/envelo_e</item>
+        <item name="windowSplashScreenAnimationDuration">300</item> <!--# Required for-->
+        <!--# animated icons-->
+        <!--Set the theme of the activity that directly follows your splash screen-->
+        <item name="postSplashScreenTheme">@style/Theme.Envelo</item>
+    </style>
 </resources>

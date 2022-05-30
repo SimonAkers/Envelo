@@ -11,9 +11,12 @@
         android:theme="@style/Theme.Envelo">
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="sensorPortrait"
             android:exported="false" />
         <activity
             android:name=".SignInActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/Theme.App.starting"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

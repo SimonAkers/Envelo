@@ -5,10 +5,12 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
 
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -18,6 +20,8 @@ import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.Scope;
 
 public class SignInActivity extends AppCompatActivity {
+    private boolean splashOn = true;
+
     /** A callback for when the user finishes signing in */
     private final ActivityResultCallback<ActivityResult> onActivityResult = result -> {
         if (result.getResultCode() == RESULT_OK) {
@@ -29,6 +33,8 @@ public class SignInActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        showSplashScreen();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in_activity);
 
@@ -54,6 +60,20 @@ public class SignInActivity extends AppCompatActivity {
 
         // If already logged in, skip to main menu
         if (isLoggedIn()) showMain();
+    }
+
+    private void showSplashScreen() {
+        SplashScreen splash = SplashScreen.installSplashScreen(this);
+
+        // Set splashOn as the condition to keep the splash screen showing
+        splash.setKeepOnScreenCondition(() -> splashOn);
+
+        // Get the delay for the splash screen (how long it's shown)
+        int splashDuration = getResources().getInteger(R.integer.splash_duration);
+
+        // Change splashOn to false after a delay
+        Handler h = new Handler();
+        h.postDelayed(() -> splashOn = false, splashDuration);
     }
 
     /**
