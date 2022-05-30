@@ -45,7 +45,7 @@ public class SignInActivity extends AppCompatActivity {
 
         // Set the callback for the sign in button
         GoogleSignInClient gsc = GoogleSignIn.getClient(this, gso);
-        findViewById(R.id.sign_in_button).setOnClickListener(view -> signIn.launch(gsc.getSignInIntent()));
+        findViewById(R.id.btn_sign_in).setOnClickListener(view -> signIn.launch(gsc.getSignInIntent()));
     }
 
     @Override

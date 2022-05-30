@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable-night/envelo.xml" value="0.247" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable-night/ic_envelo.xml" value="0.247" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/envelo.xml" value="0.247" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1935" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1935" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/activity_main.xml" value="0.17135416666666667" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/sign_in_activity.xml" value="0.33" />
       </map>
