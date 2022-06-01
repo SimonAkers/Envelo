@@ -1,0 +1,14 @@
+package io.github.simonakers.envelo.database;
+
+import androidx.room.*;
+
+import java.util.List;
+
+@Dao
+public interface TransactionDao {
+    @Query("SELECT * FROM `Transaction`")
+    List<Transaction> getAll();
+
+    @Query("SELECT * FROM `Transaction` WHERE envelope LIKE :envelope")
+    List<Transaction> getAll(Envelope envelope);
+}

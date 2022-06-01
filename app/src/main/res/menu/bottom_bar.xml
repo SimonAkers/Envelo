@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/transactions"
+        android:title="@string/menu_bottom_transactions_title"
+        android:icon="@drawable/ic_money"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/envelopes"
+        android:title="@string/menu_bottom_envelope_title"
+        android:icon="@drawable/ic_envelope"
+        app:showAsAction="always"/>
+</menu>
