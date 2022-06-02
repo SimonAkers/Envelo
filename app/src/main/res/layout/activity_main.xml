@@ -25,4 +25,11 @@
         android:layout_centerHorizontal="true"
         android:background="@color/toolbar"
         app:menu="@menu/bottom_bar" />
+
+    <TextView
+        android:id="@+id/noData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_data" />
 </RelativeLayout>

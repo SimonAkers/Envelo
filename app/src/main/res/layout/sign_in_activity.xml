@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/btn_sign_in"
         android:layout_centerHorizontal="true"
+        android:contentDescription="@string/desc_envelo_text"
 
         app:layout_constraintBottom_toTopOf="@id/btn_sign_in"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -38,6 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -48,13 +51,14 @@
         android:id="@+id/btn_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/edge_margin"
         android:text="@string/login_skip_btn"
+        android:textColor="@color/btn_text_faint"
         android:textAllCaps="false"
+        android:layout_marginTop="20dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_in"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

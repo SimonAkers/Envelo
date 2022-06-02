@@ -12,6 +12,8 @@
 
     <color name="lt_red">#FF3636</color>
 
+    <color name="btn_text_faint">#808080</color>
+
     <color name="toolbar">#EEEEEE</color>
     <color name="dk_toolbar">#DDDDDD</color>
 </resources>

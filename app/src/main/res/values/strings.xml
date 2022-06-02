@@ -4,6 +4,8 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
+    <string name="no_data">No data to display</string>
+
     <!-- This string should be all lowercase! -->
     <string name="tag_line">budgeting made simple</string>
 
@@ -15,7 +17,8 @@
     </string>
 
     <string name="menu_transactions_title">Transactions</string>
-    <string name="menu_envelope_title">Envelopes</string>
+    <string name="menu_envelopes_title">Envelopes</string>
+    <string name="menu_vendors_title">Vendors</string>
     <string name="menu_analytics_title">Analytics</string>
     <string name="menu_settings_title">Settings</string>
 </resources>

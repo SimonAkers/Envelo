@@ -4,15 +4,20 @@
     <item android:id="@+id/transactions"
         android:title="@string/menu_transactions_title"
         android:icon="@drawable/ic_money"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/envelopes"
+        android:title="@string/menu_envelopes_title"
+        android:icon="@drawable/ic_envelope"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/vendors"
+        android:title="@string/menu_vendors_title"
+        android:icon="@drawable/ic_vendors"
+        app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/analytics"
         android:title="@string/menu_analytics_title"
         android:icon="@drawable/ic_analytics"
-        app:showAsAction="always"/>
-
-    <item android:id="@+id/envelopes"
-        android:title="@string/menu_envelope_title"
-        android:icon="@drawable/ic_envelope"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 </menu>
