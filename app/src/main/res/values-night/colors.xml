@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="btn_text_faint">#A5A5A5</color>
+    <color name="btn_text_faint">#C5C5C5</color>
 
     <color name="toolbar">#252525</color>
     <color name="dk_toolbar">#1C1C1C</color>
