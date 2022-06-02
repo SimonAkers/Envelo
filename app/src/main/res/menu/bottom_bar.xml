@@ -6,6 +6,11 @@
         android:icon="@drawable/ic_money"
         app:showAsAction="always"/>
 
+    <item android:id="@+id/analytics"
+        android:title="@string/menu_analytics_title"
+        android:icon="@drawable/ic_analytics"
+        app:showAsAction="always"/>
+
     <item android:id="@+id/envelopes"
         android:title="@string/menu_envelope_title"
         android:icon="@drawable/ic_envelope"

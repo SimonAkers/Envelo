@@ -9,7 +9,7 @@ public class Transaction {
     public int id;
 
     /** The name of the envelope this transaction belongs to */
-    public Envelope envelope;
+    public String envelope;
     /** The name of the merchant that made this transaction */
     public String merchant;
     /** Notes about this transaction */

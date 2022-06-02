@@ -9,6 +9,6 @@ public interface TransactionDao {
     @Query("SELECT * FROM `Transaction`")
     List<Transaction> getAll();
 
-    @Query("SELECT * FROM `Transaction` WHERE envelope LIKE :envelope")
-    List<Transaction> getAll(Envelope envelope);
+    @Query("SELECT * FROM `Transaction` WHERE envelope LIKE :envelopeName")
+    List<Transaction> getAll(String envelopeName);
 }

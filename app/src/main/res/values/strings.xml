@@ -16,5 +16,6 @@
 
     <string name="menu_transactions_title">Transactions</string>
     <string name="menu_envelope_title">Envelopes</string>
+    <string name="menu_analytics_title">Analytics</string>
     <string name="menu_settings_title">Settings</string>
 </resources>

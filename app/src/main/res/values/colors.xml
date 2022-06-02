@@ -8,5 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="highlight">#7DAE5F</color>
+
     <color name="lt_red">#FF3636</color>
+
+    <color name="toolbar">#EEEEEE</color>
+    <color name="dk_toolbar">#DDDDDD</color>
 </resources>

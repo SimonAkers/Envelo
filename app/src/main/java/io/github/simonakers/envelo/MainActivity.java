@@ -12,9 +12,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set status bar color
-        TypedValue value = new TypedValue();
-        getTheme().resolveAttribute(R.attr.colorPrimary, value, true);
-        getWindow().setStatusBarColor(value.data);
+        // Set status and nav bar color
+        int color = getResources().getColor(R.color.dk_toolbar);
+        getWindow().setStatusBarColor(color);
+        getWindow().setNavigationBarColor(color);
     }
 }
