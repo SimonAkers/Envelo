@@ -12,10 +12,12 @@
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_cloud_off.xml" value="0.247" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1935" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1935" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_settings.xml" value="0.276" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/toolbar_color.xml" value="0.247" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/sign_in_activity.xml" value="0.33" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/menu/bottom_bar.xml" value="0.3614583333333333" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/menu/main_top_bar.xml" value="0.3614583333333333" />
       </map>
     </option>
   </component>
