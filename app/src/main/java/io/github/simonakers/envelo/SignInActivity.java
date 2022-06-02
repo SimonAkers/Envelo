@@ -13,6 +13,7 @@ import android.content.Intent;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.TypedValue;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -39,6 +40,7 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         showSplashScreen();
+        setBarColors();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in_activity);
@@ -84,6 +86,17 @@ public class SignInActivity extends AppCompatActivity {
         // Change splashOn to false after a delay
         Handler h = new Handler();
         h.postDelayed(() -> splashOn = false, splashDuration);
+    }
+
+    /**
+     * Sets the color of the status and navigation bars to match the background.
+     */
+    private void setBarColors() {
+        // Set status and nav bar color
+        TypedValue color = new TypedValue();
+        getTheme().resolveAttribute(R.attr.background, color, true);
+        getWindow().setStatusBarColor(color.data);
+        getWindow().setNavigationBarColor(color.data);
     }
 
     /**

@@ -11,10 +11,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Set status and nav bar color
-        int color = getResources().getColor(R.color.dk_toolbar);
-        getWindow().setStatusBarColor(color);
-        getWindow().setNavigationBarColor(color);
     }
 }

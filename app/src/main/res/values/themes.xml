@@ -10,10 +10,10 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?android:colorBackground</item>
+        <item name="android:statusBarColor">@color/dk_toolbar</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <!-- Nav bar color -->
-        <item name="android:navigationBarColor">?android:colorBackground</item>
+        <item name="android:navigationBarColor">@color/dk_toolbar</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <!-- Customize your theme here. -->
     </style>
