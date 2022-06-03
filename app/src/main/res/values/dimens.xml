@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="edge_margin">30dp</dimen>
+    <dimen name="edge_margin_small">10dp</dimen>
+
+    <dimen name="fab_margin">24dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="fab_max_image_size">36dp</dimen>
 </resources>

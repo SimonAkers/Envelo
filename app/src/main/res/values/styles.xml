@@ -1,3 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="FloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:backgroundTint">?android:colorPrimary</item>
+        <item name="android:tint">?android:colorBackground</item>
+        <item name="elevation">@dimen/fab_elevation</item>
+        <item name="borderWidth">0dp</item>
+        <item name="maxImageSize">@dimen/fab_max_image_size</item>
+    </style>
+
+    <style name="ToolbarTop">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/toolbar</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:theme">?attr/actionBarTheme</item>
+
+        <item name="navigationIcon">@drawable/envelo_tb</item>
+    </style>
 </resources>
