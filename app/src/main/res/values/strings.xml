@@ -16,9 +16,11 @@
         Signing in with Google allows your app data to be backed up to your Google Drive. You can sign in later from the settings menu.\n\nContinue without signing in?
     </string>
 
-    <string name="menu_transactions_title">Transactions</string>
+    <string name="menu_funds_title">Funds</string>
+    <string name="menu_accounts_title">Accounts</string>
     <string name="menu_envelopes_title">Envelopes</string>
     <string name="menu_vendors_title">Vendors</string>
     <string name="menu_analytics_title">Analytics</string>
+
     <string name="menu_settings_title">Settings</string>
 </resources>

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/transactions"
-        android:title="@string/menu_transactions_title"
-        android:icon="@drawable/ic_money"
+    <item android:id="@+id/funds"
+        android:title="@string/menu_funds_title"
+        android:icon="@drawable/ic_funds"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/accounts"
+        android:title="@string/menu_accounts_title"
+        android:icon="@drawable/ic_accounts"
         app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/envelopes"
