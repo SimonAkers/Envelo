@@ -29,4 +29,10 @@
         <!--Set the theme of the activity that directly follows your splash screen-->
         <item name="postSplashScreenTheme">@style/Theme.Envelo</item>
     </style>
+    <style name="Theme.Envelo.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Envelo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Envelo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
