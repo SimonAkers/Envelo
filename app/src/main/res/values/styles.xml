@@ -21,7 +21,9 @@
         <item name="android:background">@color/toolbar</item>
         <item name="android:minHeight">?attr/actionBarSize</item>
         <item name="android:theme">?attr/actionBarTheme</item>
+    </style>
 
+    <style name="ToolbarTop.Envelo" parent="ToolbarTop">
         <item name="navigationIcon">@drawable/envelo_tb</item>
     </style>
 </resources>

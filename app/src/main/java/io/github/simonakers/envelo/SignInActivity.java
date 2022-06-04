@@ -11,6 +11,7 @@ import androidx.core.splashscreen.SplashScreen;
 import android.content.DialogInterface;
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.TypedValue;
@@ -23,7 +24,10 @@ import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.Scope;
 
 public class SignInActivity extends AppCompatActivity {
+    /** If the splash screen is being shown */
     private boolean splashOn = true;
+    /** If the next activity should be the main activity */
+    private boolean showMain;
 
     /** A callback for when the user finishes signing in */
     private final ActivityResultCallback<ActivityResult> onActivityResult = result -> {
@@ -31,7 +35,7 @@ public class SignInActivity extends AppCompatActivity {
             // If not logged in somehow, say that login failed but proceed to next activity anyways
             if (!isLoggedIn()) showLoginFailed();
 
-            showMain();
+            nextActivity();
         } else {
             showLoginFailed();
         }
@@ -44,6 +48,8 @@ public class SignInActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in_activity);
+
+        showMain = getIntent().getBooleanExtra("show_main", true);
 
         // Register a callback for when the user finishes sign in
         ActivityResultLauncher<Intent> signIn = registerForActivityResult(
@@ -68,7 +74,7 @@ public class SignInActivity extends AppCompatActivity {
         super.onStart();
 
         // If already logged in, skip to main menu
-        if (isLoggedIn()) showMain();
+        if (isLoggedIn()) nextActivity();
     }
 
     /**
@@ -120,23 +126,37 @@ public class SignInActivity extends AppCompatActivity {
      */
     private void skipLogin() {
         // TODO: Save that the user skipped as a preference so they don't have to skip every time
+        DialogInterface.OnClickListener onClickYes = (di, i) -> {
+            SharedPreferences.Editor prefs = getSharedPreferences("app", MODE_PRIVATE).edit();
+            prefs.putBoolean("offline_mode", true);
+            prefs.apply();
+
+            nextActivity();
+        };
+
         new AlertDialog.Builder(this)
             .setMessage(R.string.login_skip_msg)
             .setTitle(R.string.login_skip_title)
             .setIcon(R.drawable.ic_cloud_off)
-            .setPositiveButton(R.string.yes, (di, i) -> showMain())
+            .setPositiveButton(R.string.yes, onClickYes)
             .setNegativeButton(R.string.no, null)
             .show();
     }
 
     /**
-     * Shows the main activity and closes this activity.
+     * Proceeds to the next activity.
+     *
+     * By default, shows the main activity and closes this activity. If `show_main` intent extra
+     * is set to false, will just call `finish()` instead.
      */
-    private void showMain() {
-        // Start main activity and clear activity backstack
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+    private void nextActivity() {
+        if (showMain) {
+            // Start main activity and clear activity backstack
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+
         finish();
     }
 }

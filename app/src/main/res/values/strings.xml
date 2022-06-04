@@ -16,20 +16,24 @@
         Signing in with Google allows your app data to be backed up to your Google Drive. You can sign in later from the settings menu.\n\nContinue without signing in?
     </string>
 
+    <!-- Menu and menu item titles -->
     <string name="menu_funds_title">Funds</string>
     <string name="menu_accounts_title">Accounts</string>
     <string name="menu_envelopes_title">Envelopes</string>
     <string name="menu_vendors_title">Vendors</string>
     <string name="menu_analytics_title">Analytics</string>
-
     <string name="menu_settings_title">Settings</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- Settings activity -->
+    <string name="settings_category_title">Backups</string>
+
+    <string name="settings_backup">Backup budget data</string>
+    <string name="settings_backup_summary">Automatically backup your budget data to Google Drive</string>
+
+    <string name="settings_sign_in">Sign in with Google</string>
+    <string name="settings_sign_in_summary">Sign in with your Google account to enable automatic backups to Google Drive</string>
+
+    <string name="settings_sign_out">Sign out of Google</string>
+    <string name="settings_sign_out_summary">Sign out of your Google account. This will disable Google Drive backups.</string>
+
 </resources>
