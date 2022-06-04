@@ -23,7 +23,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.Scope;
 
+import io.github.simonakers.envelo.controller.App;
+
 public class SignInActivity extends AppCompatActivity {
+    private App app;
     /** If the splash screen is being shown */
     private boolean splashOn = true;
     /** If the next activity should be the main activity */
@@ -49,6 +52,7 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in_activity);
 
+        app = (App) getApplication();
         showMain = getIntent().getBooleanExtra("show_main", true);
 
         // Register a callback for when the user finishes sign in
@@ -62,10 +66,14 @@ public class SignInActivity extends AppCompatActivity {
             .requestScopes(new Scope(Scopes.DRIVE_APPFOLDER))
             .build();
 
-        // Set the callback for the sign in button
+        // Get the sign in client
         GoogleSignInClient gsc = GoogleSignIn.getClient(this, gso);
+        app.setSignInClient(gsc);
+
+        // Set the callback for the sign in button
         findViewById(R.id.btn_sign_in).setOnClickListener(v -> signIn.launch(gsc.getSignInIntent()));
 
+        // Set the callback for the skip button
         findViewById(R.id.btn_skip).setOnClickListener(v -> skipLogin());
     }
 

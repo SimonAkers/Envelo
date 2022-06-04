@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
@@ -20,9 +21,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+
+import io.github.simonakers.envelo.controller.App;
 
 public class SettingsActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +37,11 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        showFragment();
 
+    }
+
+    protected void showFragment() {
         getSupportFragmentManager()
             .beginTransaction()
             .replace(R.id.settings_container, new SettingsFragment())
@@ -61,9 +68,12 @@ public class SettingsActivity extends AppCompatActivity {
      * A class representing a fragment for user settings.
      */
     public static class SettingsFragment extends PreferenceFragmentCompat {
+        private App app;
+
         @Override
         public void onCreatePreferences(@Nullable Bundle savedInstanceState, @Nullable String rootKey) {
             setPreferencesFromResource(R.xml.fragment_settings, rootKey);
+            app = (App) getActivity().getApplication();
 
             PreferenceCategory pCategory = findPreference("category_backup");
 
@@ -89,14 +99,29 @@ public class SettingsActivity extends AppCompatActivity {
             String key = preference.getKey();
 
             if (key.equals("sign_in")) {
-                Intent intent = new Intent(getContext(), SignInActivity.class);
-                intent.putExtra("show_main", false);
-                startActivity(intent);
+                signIn();
             } else if (key.equals("sign_out")) {
-                // sign out
+                signOut();
             }
 
             return true;
+        }
+
+        private void signIn() {
+            Intent intent = new Intent(getContext(), SignInActivity.class);
+            intent.putExtra("show_main", false);
+            startActivity(intent);
+        }
+
+        private void signOut() {
+            GoogleSignInClient gsc = app.getSignInClient();
+            gsc.signOut().addOnCompleteListener(task -> {
+                FragmentActivity activity = getActivity();
+
+                if (activity instanceof SettingsActivity) {
+                    ((SettingsActivity) activity).showFragment();
+                }
+            });
         }
     }
 }
