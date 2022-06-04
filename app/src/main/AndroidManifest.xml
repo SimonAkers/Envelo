@@ -12,6 +12,7 @@
         android:theme="@style/Theme.Envelo">
         <activity
             android:name=".SettingsActivity"
+            android:theme="@style/Theme.Envelo.PreferenceScreen"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

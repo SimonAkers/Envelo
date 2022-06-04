@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 
@@ -73,7 +74,9 @@ public class SettingsActivity extends AppCompatActivity {
                 if (ctx != null && GoogleSignIn.getLastSignedInAccount(ctx) != null) {
                     pref = pCategory.findPreference("sign_in");
                 } else {
-                    pCategory.findPreference("backup").setEnabled(false);
+                    Preference backupPref = pCategory.findPreference("backup");
+                    if (backupPref != null) backupPref.setEnabled(false);
+
                     pref = pCategory.findPreference("sign_out");
                 }
 

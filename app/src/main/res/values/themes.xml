@@ -30,6 +30,10 @@
         <item name="postSplashScreenTheme">@style/Theme.Envelo</item>
     </style>
 
+    <style name="Theme.Envelo.PreferenceScreen">
+        <item name="colorAccent">?android:colorPrimary</item>
+    </style>
+
     <style name="Theme.Envelo.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

@@ -6,26 +6,38 @@
     <PreferenceCategory
         app:iconSpaceReserved="false"
         app:key="category_backup"
-        android:title="@string/settings_category_title">
+        android:title="@string/settings_category_backup_title">
 
         <SwitchPreferenceCompat
-            app:iconSpaceReserved="false"
+            app:icon="@drawable/ic_backup"
             app:key="backup"
             app:defaultValue="true"
             app:title="@string/settings_backup"
             app:summary="@string/settings_backup_summary" />
 
         <Preference
-            app:iconSpaceReserved="false"
+            app:icon="@drawable/google_g"
             app:key="sign_in"
             app:title="@string/settings_sign_in"
             app:summary="@string/settings_sign_in_summary" />
 
         <Preference
-            app:iconSpaceReserved="false"
+            app:icon="@drawable/google_g"
             app:key="sign_out"
             app:title="@string/settings_sign_out"
             app:summary="@string/settings_sign_out_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:key="category_data"
+        android:title="@string/settings_category_data_title">
+
+        <Preference
+            app:icon="@drawable/ic_export"
+            app:key="export"
+            app:title="@string/settings_export"
+            app:summary="@string/settings_export_summary" />
     </PreferenceCategory>
 
 </PreferenceScreen>
