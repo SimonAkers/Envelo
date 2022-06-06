@@ -16,6 +16,11 @@
         Signing in with Google allows your app data to be backed up to your Google Drive. You can sign in later from the settings menu.\n\nContinue without signing in?
     </string>
 
+    <string name="logout_title">Sign out</string>
+    <string name="logout_msg">
+        Signing out of Google will disable automatic backups to Google Drive. If you lose data in the future, you may not be able to recover it.\n\nContinue signing out?
+    </string>
+
     <!-- Menu and menu item titles -->
     <string name="menu_funds_title">Funds</string>
     <string name="menu_accounts_title">Accounts</string>

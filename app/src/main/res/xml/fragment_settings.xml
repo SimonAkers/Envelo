@@ -11,18 +11,17 @@
         <SwitchPreferenceCompat
             app:icon="@drawable/ic_backup"
             app:key="backup"
-            app:defaultValue="true"
             app:title="@string/settings_backup"
             app:summary="@string/settings_backup_summary" />
 
         <Preference
-            app:icon="@drawable/google_g"
+            app:icon="@drawable/ic_login"
             app:key="sign_in"
             app:title="@string/settings_sign_in"
             app:summary="@string/settings_sign_in_summary" />
 
         <Preference
-            app:icon="@drawable/google_g"
+            app:icon="@drawable/ic_logout"
             app:key="sign_out"
             app:title="@string/settings_sign_out"
             app:summary="@string/settings_sign_out_summary" />

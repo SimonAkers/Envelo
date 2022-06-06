@@ -38,6 +38,12 @@ public class SignInActivity extends AppCompatActivity {
             // If not logged in somehow, say that login failed but proceed to next activity anyways
             if (!isLoggedIn()) showLoginFailed();
 
+            // Enable backups and disable offline mode
+            app.prefs().edit()
+                .putBoolean("backup", true)
+                .putBoolean("offline_mode", false)
+                .apply();
+
             nextActivity();
         } else {
             showLoginFailed();
@@ -82,7 +88,9 @@ public class SignInActivity extends AppCompatActivity {
         super.onStart();
 
         // If already logged in, skip to main menu
-        if (isLoggedIn()) nextActivity();
+        if (showMain && app.prefs().getBoolean("offline_mode", false) || isLoggedIn()) {
+            nextActivity();
+        }
     }
 
     /**
@@ -133,12 +141,8 @@ public class SignInActivity extends AppCompatActivity {
      * Prompts the user to skip Google sign in.
      */
     private void skipLogin() {
-        // TODO: Save that the user skipped as a preference so they don't have to skip every time
         DialogInterface.OnClickListener onClickYes = (di, i) -> {
-            SharedPreferences.Editor prefs = getSharedPreferences("app", MODE_PRIVATE).edit();
-            prefs.putBoolean("offline_mode", true);
-            prefs.apply();
-
+            app.prefs().edit().putBoolean("offline_mode", true).apply();
             nextActivity();
         };
 

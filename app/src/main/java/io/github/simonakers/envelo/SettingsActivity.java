@@ -1,8 +1,8 @@
 package io.github.simonakers.envelo;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.preference.Preference;
@@ -11,17 +11,13 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+
+import java.util.Objects;
 
 import io.github.simonakers.envelo.controller.App;
 
@@ -73,7 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onCreatePreferences(@Nullable Bundle savedInstanceState, @Nullable String rootKey) {
             setPreferencesFromResource(R.xml.fragment_settings, rootKey);
-            app = (App) getActivity().getApplication();
+            app = (App) requireActivity().getApplication();
 
             PreferenceCategory pCategory = findPreference("category_backup");
 
@@ -99,23 +95,39 @@ public class SettingsActivity extends AppCompatActivity {
             String key = preference.getKey();
 
             if (key.equals("sign_in")) {
-                signIn();
+                promptSignIn();
             } else if (key.equals("sign_out")) {
-                signOut();
+                promptSignOut();
             }
 
             return true;
         }
 
-        private void signIn() {
+        private void promptSignIn() {
             Intent intent = new Intent(getContext(), SignInActivity.class);
             intent.putExtra("show_main", false);
             startActivity(intent);
         }
 
+        private void promptSignOut() {
+            new AlertDialog.Builder(requireContext())
+                .setMessage(R.string.logout_msg)
+                .setTitle(R.string.logout_title)
+                .setIcon(R.drawable.ic_cloud_off)
+                .setPositiveButton(R.string.yes, (di, i) -> signOut())
+                .setNegativeButton(R.string.no, null)
+                .show();
+        }
+
         private void signOut() {
             GoogleSignInClient gsc = app.getSignInClient();
+
             gsc.signOut().addOnCompleteListener(task -> {
+                // Disable backups
+                app.prefs().edit()
+                        .putBoolean("backup", false)
+                        .apply();
+
                 FragmentActivity activity = getActivity();
 
                 if (activity instanceof SettingsActivity) {
