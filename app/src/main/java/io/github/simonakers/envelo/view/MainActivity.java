@@ -1,16 +1,14 @@
-package io.github.simonakers.envelo;
+package io.github.simonakers.envelo.view;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import io.github.simonakers.envelo.R;
 
 public class MainActivity extends AppCompatActivity {
 

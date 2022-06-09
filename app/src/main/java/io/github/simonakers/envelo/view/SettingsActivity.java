@@ -1,4 +1,4 @@
-package io.github.simonakers.envelo;
+package io.github.simonakers.envelo.view;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -17,8 +17,7 @@ import android.view.MenuItem;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 
-import java.util.Objects;
-
+import io.github.simonakers.envelo.R;
 import io.github.simonakers.envelo.controller.App;
 
 public class SettingsActivity extends AppCompatActivity {

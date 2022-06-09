@@ -1,4 +1,4 @@
-package io.github.simonakers.envelo;
+package io.github.simonakers.envelo.view;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -11,7 +11,6 @@ import androidx.core.splashscreen.SplashScreen;
 import android.content.DialogInterface;
 import android.content.Intent;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.TypedValue;
@@ -23,6 +22,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.Scope;
 
+import io.github.simonakers.envelo.R;
 import io.github.simonakers.envelo.controller.App;
 
 public class SignInActivity extends AppCompatActivity {

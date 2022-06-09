@@ -1,4 +1,4 @@
-package io.github.simonakers.envelo;
+package io.github.simonakers.envelo.view;
 
 import android.os.Bundle;
 
@@ -12,6 +12,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import io.github.simonakers.envelo.R;
 
 /**
  * A simple {@link Fragment} subclass.

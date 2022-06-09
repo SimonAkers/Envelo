@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_top"
@@ -28,7 +28,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:name="io.github.simonakers.envelo.FundsFragment"
+        android:name="io.github.simonakers.envelo.view.FundsFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
 
