@@ -13,6 +13,7 @@
     <color name="lt_red">#FF3636</color>
 
     <color name="btn_text_faint">#757575</color>
+    <color name="separator_faint">#D5D5D5</color>
 
     <color name="toolbar">#EEEEEE</color>
     <color name="dk_toolbar">#DDDDDD</color>

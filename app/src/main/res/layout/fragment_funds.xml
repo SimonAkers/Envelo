@@ -13,9 +13,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="@dimen/edge_margin_small"
-        android:layout_marginTop="@dimen/edge_margin_small"
-        android:layout_marginEnd="@dimen/edge_margin_small" />
+        tools:listitem="@layout/adapter_transaction"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

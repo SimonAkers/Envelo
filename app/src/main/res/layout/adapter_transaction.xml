@@ -54,13 +54,42 @@
         app:layout_constraintTop_toBottomOf="@+id/text_account" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/img_flow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/edge_margin_small"
-        android:contentDescription="@string/desc_has_notes"
+        android:contentDescription=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_date"
+        app:srcCompat="@drawable/ic_arrow_out_small" />
+
+    <ImageView
+        android:id="@+id/img_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/edge_margin_small"
+        android:contentDescription=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_flow"
+        app:layout_constraintTop_toBottomOf="@+id/text_date"
         app:srcCompat="@drawable/ic_notes_small" />
+
+    <ImageView
+        android:id="@+id/img_recurring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/edge_margin_small"
+        android:contentDescription=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_notes"
+        app:layout_constraintTop_toBottomOf="@+id/text_date"
+        app:srcCompat="@drawable/ic_recur_small" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator_faint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
