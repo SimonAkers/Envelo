@@ -56,7 +56,7 @@ public class SignInActivity extends AppCompatActivity {
         setBarColors();
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_in_activity);
+        setContentView(R.layout.activity_sign_in);
 
         app = (App) getApplication();
         showMain = getIntent().getBooleanExtra("show_main", true);

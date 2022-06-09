@@ -32,11 +32,13 @@
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_login.xml" value="0.221" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_logout.xml" value="0.221" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_money.xml" value="0.2325" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_notes_small.xml" value="0.2635" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_search.xml" value="0.276" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/ic_settings.xml" value="0.276" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/drawable/toolbar_color.xml" value="0.247" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/activity_settings.xml" value="0.3625" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/adapter_transaction.xml" value="0.5" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/fragment_funds.xml" value="0.3625" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/sign_in_activity.xml" value="0.33" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/menu/bottom_bar.xml" value="0.3614583333333333" />
