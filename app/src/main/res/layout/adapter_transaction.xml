@@ -53,38 +53,16 @@
         app:layout_constraintEnd_toEndOf="@id/text_account"
         app:layout_constraintTop_toBottomOf="@+id/text_account" />
 
-    <ImageView
-        android:id="@+id/img_flow"
+    <io.github.simonakers.envelo.view.custom.IconListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/edge_margin_small"
-        android:contentDescription=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_date"
-        app:srcCompat="@drawable/ic_arrow_out_small" />
 
-    <ImageView
-        android:id="@+id/img_notes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/edge_margin_small"
-        android:contentDescription=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/img_flow"
-        app:layout_constraintTop_toBottomOf="@+id/text_date"
-        app:srcCompat="@drawable/ic_notes_small" />
+        app:iconSpacing="15dp"
+        app:iconSize="20dp"
 
-    <ImageView
-        android:id="@+id/img_recurring"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/edge_margin_small"
-        android:contentDescription=""
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/img_notes"
-        app:layout_constraintTop_toBottomOf="@+id/text_date"
-        app:srcCompat="@drawable/ic_recur_small" />
+        app:layout_constraintStart_toStartOf="@+id/text_date"
+        app:layout_constraintTop_toBottomOf="@+id/text_date" />
 
     <View
         android:layout_width="match_parent"
