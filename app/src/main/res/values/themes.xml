@@ -34,6 +34,10 @@
         <item name="colorAccent">?android:colorPrimary</item>
     </style>
 
+    <style name="Theme.Envelo.AccentColor">
+        <item name="colorAccent">?android:colorPrimary</item>
+    </style>
+
     <style name="Theme.Envelo.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

@@ -28,6 +28,10 @@
     <string name="menu_vendors_title">Vendors</string>
     <string name="menu_analytics_title">Analytics</string>
     <string name="menu_settings_title">Settings</string>
+    <string name="menu_search_title">Search</string>
+    <string name="menu_edit_title">Edit</string>
+    <string name="menu_transaction_title">Transaction</string>
+    <string name="menu_delete_title">Delete</string>
 
     <!-- Settings activity -->
     <string name="settings_category_backup_title">Drive Backups</string>
@@ -48,4 +52,7 @@
 
     <string name="settings_import">Import budget data</string>
     <string name="settings_import_summary">Import budget data from a previously exported .TSV file.</string>
+
+    <!-- Transaction activity -->
+    <string name="transaction_amount">Amount</string>
 </resources>

@@ -3,6 +3,5 @@
 <!-- Content description string resources -->
 <resources>
     <string name="desc_envelo_text">Envelo text logo</string>
-    <string name="desc_fab_funds">Options for funds</string>
-    <string name="desc_has_notes">Transaction has notes</string>
+    <string name="desc_fab_funds">New transaction</string>
 </resources>

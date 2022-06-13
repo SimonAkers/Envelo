@@ -101,8 +101,8 @@ public class IconListView extends LinearLayout {
     public void setOrientation(int orientation) {
         super.setOrientation(orientation);
 
-        // If not in edit mode, reset the icon spacing to match the orientation
-        if (!isInEditMode()) setIconSpacing(iconSpacing);
+        // Reset the icon spacing to match the orientation
+        if (imvParams != null) setIconSpacing(iconSpacing);
     }
 
     /**

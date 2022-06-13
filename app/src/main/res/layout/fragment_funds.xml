@@ -8,7 +8,7 @@
     tools:context=".view.FundsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
@@ -16,8 +16,8 @@
         tools:listitem="@layout/adapter_transaction"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fab"
+        style="@style/FloatingActionButton"
         android:contentDescription="@string/desc_fab_funds"
-        android:src="@drawable/ic_drop_up"
-        style="@style/FloatingActionButton"/>
+        android:src="@drawable/ic_add" />
 </RelativeLayout>
