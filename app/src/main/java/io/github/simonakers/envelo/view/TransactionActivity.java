@@ -62,11 +62,13 @@ public class TransactionActivity extends AppCompatActivity {
         keypad.setOnConfirmListener(view -> edtAmount.clearFocus());
     }
 
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_bar_edit, menu);
         return true;
     }
+     */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
