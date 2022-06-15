@@ -16,6 +16,9 @@
         <item name="android:navigationBarColor">@color/dk_toolbar</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowExitTransition">@transition/slide</item>
+        <item name="android:windowEnterTransition">@transition/slide2</item>
     </style>
 
     <style name="Theme.App.starting" parent="Theme.SplashScreen">
@@ -30,18 +33,14 @@
         <item name="postSplashScreenTheme">@style/Theme.Envelo</item>
     </style>
 
-    <style name="Theme.Envelo.PreferenceScreen">
-        <item name="colorAccent">?android:colorPrimary</item>
-    </style>
-
     <style name="Theme.Envelo.AccentColor">
         <item name="colorAccent">?android:colorPrimary</item>
     </style>
 
-    <style name="Theme.Envelo.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="Theme.Envelo.ActivityAnim" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
     </style>
-    <style name="Theme.Envelo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.Envelo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
