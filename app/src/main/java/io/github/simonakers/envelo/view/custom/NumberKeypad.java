@@ -71,7 +71,7 @@ public class NumberKeypad extends FrameLayout implements View.OnClickListener {
                 inputConnection.commitText("", 1);
             }
         } else if (tag.equals(CONFIRM)) {
-            if (onConfirmListener != null) onConfirmListener.onConfirm();
+            if (onConfirmListener != null) onConfirmListener.onConfirm(this);
         } else {
             inputConnection.commitText(tag, 1);
         }
@@ -102,6 +102,6 @@ public class NumberKeypad extends FrameLayout implements View.OnClickListener {
         /**
          * Called when the NumberKeypad's confirm button is clicked.
          */
-        void onConfirm();
+        void onConfirm(View view);
     }
 }

@@ -44,8 +44,7 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/top_bar_edit"
-        app:title="@string/menu_transaction_title" />
+        app:title="@string/menu_new_transaction_title" />
 
     <io.github.simonakers.envelo.view.custom.CurrencyEditText
         android:id="@+id/edt_amount"
@@ -76,6 +75,7 @@
         android:layout_height="0dp"
         android:background="@color/bg_keypad"
         android:paddingVertical="@dimen/edge_margin_small"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edt_amount" />
 

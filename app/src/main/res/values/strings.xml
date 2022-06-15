@@ -31,6 +31,8 @@
     <string name="menu_search_title">Search</string>
     <string name="menu_edit_title">Edit</string>
     <string name="menu_transaction_title">Transaction</string>
+    <string name="menu_new_transaction_title">New Transaction</string>
+    <string name="menu_edit_transaction_title">Edit Transaction</string>
     <string name="menu_delete_title">Delete</string>
 
     <!-- Settings activity -->

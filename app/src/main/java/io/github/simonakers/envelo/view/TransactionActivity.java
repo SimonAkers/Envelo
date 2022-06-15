@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.ActionBar;
@@ -23,6 +24,8 @@ public class TransactionActivity extends AppCompatActivity {
 
         setupToolbar();
         setupKeypad();
+
+        edtAmount.requestFocus();
     }
 
     /**
@@ -46,8 +49,19 @@ public class TransactionActivity extends AppCompatActivity {
             return true;
         });
 
+        edtAmount.setOnFocusChangeListener((view, hasFocus) -> {
+            if (hasFocus) {
+                keypad.setVisibility(View.VISIBLE);
+            } else {
+                keypad.setVisibility(View.GONE);
+            }
+        });
+
         keypad.connectEditText(edtAmount);
-        edtAmount.requestFocus();
+
+        keypad.setOnConfirmListener(view -> {
+            edtAmount.clearFocus();
+        });
     }
 
     @Override
