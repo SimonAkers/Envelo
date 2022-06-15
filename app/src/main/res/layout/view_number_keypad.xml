@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4"
+        tools:ignore="HardcodedText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:weightSum="3">
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="1"
+                android:text="1" />
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="2"
+                android:text="2" />
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="3"
+                android:text="3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:weightSum="3">
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="4"
+                android:text="4" />
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="5"
+                android:text="5" />
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="6"
+                android:text="6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:weightSum="3">
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="7"
+                android:text="7" />
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="8"
+                android:text="8" />
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="9"
+                android:text="9" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:weightSum="3">
+
+            <!--
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="backspace"
+                android:text="\u232B" />
+            -->
+
+            <ImageView
+                style="@style/NumberKeypadButton"
+                android:tag="backspace"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/desc_backspace"
+                app:tint="@color/lt_red"
+                app:srcCompat="@drawable/ic_keypad_backspace" />
+
+            <TextView
+                style="@style/NumberKeypadTextButton"
+                android:tag="0"
+                android:text="0" />
+
+            <ImageView
+                style="@style/NumberKeypadButton"
+                android:tag="confirm"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/desc_confirm"
+                app:tint="@color/highlight"
+                app:srcCompat="@drawable/ic_keypad_check" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</merge>

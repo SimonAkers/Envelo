@@ -1,18 +1,20 @@
 package io.github.simonakers.envelo.view;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import io.github.simonakers.envelo.R;
+import io.github.simonakers.envelo.view.custom.NumberKeypad;
 
 public class TransactionActivity extends AppCompatActivity {
+    EditText edtAmount;
+    NumberKeypad keypad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +22,7 @@ public class TransactionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_transaction);
 
         setupToolbar();
-
-        EditText edtAmount = findViewById(R.id.edt_amount);
-        edtAmount.requestFocus();
-
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+        setupKeypad();
     }
 
     /**
@@ -36,6 +33,21 @@ public class TransactionActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private void setupKeypad() {
+        edtAmount = findViewById(R.id.edt_amount);
+        keypad = findViewById(R.id.keypad);
+
+        edtAmount.setOnTouchListener((view, motionEvent) -> {
+            edtAmount.requestFocus();
+            view.performClick();
+            return true;
+        });
+
+        keypad.connectEditText(edtAmount);
+        edtAmount.requestFocus();
     }
 
     @Override
