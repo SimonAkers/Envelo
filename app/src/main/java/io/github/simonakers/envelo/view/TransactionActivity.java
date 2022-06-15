@@ -59,9 +59,7 @@ public class TransactionActivity extends AppCompatActivity {
 
         keypad.connectEditText(edtAmount);
 
-        keypad.setOnConfirmListener(view -> {
-            edtAmount.clearFocus();
-        });
+        keypad.setOnConfirmListener(view -> edtAmount.clearFocus());
     }
 
     @Override
