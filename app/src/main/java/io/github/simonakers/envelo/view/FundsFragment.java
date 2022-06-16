@@ -23,7 +23,7 @@ import io.github.simonakers.envelo.R;
  */
 public class FundsFragment extends Fragment implements Toolbar.OnMenuItemClickListener {
     private final View.OnClickListener onClickFab = v -> {
-        Intent intent = new Intent(getContext(), TransactionActivity.class);
+        Intent intent = new Intent(getContext(), NewTransactionActivity.class);
         startActivity(intent);
     };
 

@@ -13,7 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import io.github.simonakers.envelo.R;
 import io.github.simonakers.envelo.view.custom.NumberKeypad;
 
-public class TransactionActivity extends AppCompatActivity {
+public class NewTransactionActivity extends AppCompatActivity {
     EditText edtAmount;
     NumberKeypad keypad;
     ConstraintLayout options;
@@ -21,7 +21,7 @@ public class TransactionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transaction);
+        setContentView(R.layout.activity_new_transaction);
 
         setupToolbar();
         setupKeypad();

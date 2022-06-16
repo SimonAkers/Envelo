@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Envelo">
         <activity
-            android:name=".view.TransactionActivity"
+            android:name=".view.NewTransactionActivity"
             android:exported="false" />
         <activity
             android:name=".view.SettingsActivity"
