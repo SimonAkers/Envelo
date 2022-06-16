@@ -4,6 +4,7 @@
 <resources>
     <string name="desc_envelo_text">Envelo text logo</string>
     <string name="desc_fab_funds">New transaction</string>
+    <string name="desc_fab_transactions">Confirm transaction</string>
     <string name="desc_confirm">Confirm</string>
     <string name="desc_backspace">Backspace</string>
 </resources>

@@ -39,16 +39,6 @@
         android:background="@drawable/shadow_up"
         app:layout_constraintTop_toBottomOf="@id/edt_amount" />
 
-    <io.github.simonakers.envelo.view.custom.NumberKeypad
-        android:id="@+id/keypad"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/bg_keypad"
-        android:visibility="gone"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/options"
         android:layout_width="match_parent"
@@ -60,7 +50,7 @@
         <Button
             style="@style/SelectorButton"
             android:id="@+id/btn_account"
-            android:hint="Select Account"
+            android:hint="@string/transaction_sel_account"
             android:layout_marginTop="@dimen/edge_margin"
             android:drawableStart="@drawable/ic_accounts"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,10 +58,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            style="@style/SelectorButton"
             android:id="@+id/btn_envelope"
-            android:hint="Select Envelope"
+            style="@style/SelectorButton"
             android:drawableStart="@drawable/ic_envelope"
+            android:hint="@string/transaction_sel_envelope"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_account" />
@@ -79,7 +69,7 @@
         <Button
             style="@style/SelectorButton"
             android:id="@+id/btn_vendor"
-            android:hint="Select Vendor"
+            android:hint="@string/transaction_sel_vendor"
             android:layout_marginTop="@dimen/edge_margin"
             android:drawableStart="@drawable/ic_vendors"
             app:layout_constraintEnd_toEndOf="parent"
@@ -92,8 +82,8 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
 
-            app:textOff="Outflow"
-            app:textOn="Inflow"
+            app:textOff="@string/transaction_outflow"
+            app:textOn="@string/transaction_inflow"
             app:iconOff="@drawable/ic_arrow_out"
             app:iconOn="@drawable/ic_arrow_in"
 
@@ -110,8 +100,8 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
 
-            app:textOff="One-time"
-            app:textOn="Recurring"
+            app:textOff="@string/transaction_onetime"
+            app:textOn="@string/transaction_recurring"
             app:iconOff="@drawable/ic_recur_no"
             app:iconOn="@drawable/ic_recur"
 
@@ -125,7 +115,7 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             style="@style/FloatingActionButton"
-            android:contentDescription="@string/desc_fab_funds"
+            android:contentDescription="@string/desc_fab_transactions"
             android:src="@drawable/ic_check"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -136,21 +126,31 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/edge_margin_plus"
+            android:layout_marginTop="32dp"
 
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-
-            android:drawablePadding="@dimen/edge_margin_small"
-            android:minLines="4"
-            android:hint="Notes"
+            android:drawableStart="@drawable/ic_notes"
+            android:drawablePadding="10dp"
             android:background="@drawable/bg_notes"
-            android:padding="10dp"
-            android:textSize="14sp"
+            android:hint="@string/transaction_notes"
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:importantForAutofill="no"
 
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tgl_outflow" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <io.github.simonakers.envelo.view.custom.NumberKeypad
+        android:id="@+id/keypad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/bg_keypad"
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

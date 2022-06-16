@@ -56,5 +56,13 @@
     <string name="settings_import_summary">Import budget data from a previously exported .TSV file.</string>
 
     <!-- Transaction activity -->
-    <string name="transaction_amount">Amount</string>
+    <string name="transaction_sel_account">Select Account</string>
+    <string name="transaction_sel_envelope">Select Envelope</string>
+    <string name="transaction_sel_vendor">Select Vendor</string>
+
+    <string name="transaction_outflow">Outflow</string>
+    <string name="transaction_inflow">Inflow</string>
+    <string name="transaction_onetime">One-time</string>
+    <string name="transaction_recurring">Recurring</string>
+    <string name="transaction_notes">Notes</string>
 </resources>
