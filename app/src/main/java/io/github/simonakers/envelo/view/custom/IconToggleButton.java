@@ -1,15 +1,19 @@
 package io.github.simonakers.envelo.view.custom;
 
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.content.ContextCompat;
 
 import io.github.simonakers.envelo.R;
 
@@ -17,27 +21,31 @@ public class IconToggleButton extends AppCompatButton {
     private static final String DEFAULT_TEXT_ON = "On";
     private static final String DEFAULT_TEXT_OFF = "Off";
 
+    private @ColorInt int defaultColor;
+
     private String textOn;
     private String textOff;
-    private int textColorOn = -1;
-    private int textColorOff = -1;
+    private @ColorInt int textColorOn;
+    private @ColorInt int textColorOff;
 
     private Drawable iconOn;
     private Drawable iconOff;
-    private int iconTintOn;
-    private int iconTintOff;
+    private @ColorInt int iconTintOn;
+    private @ColorInt int iconTintOff;
 
     private boolean toggled;
 
     public IconToggleButton(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
+        defaultColor = getCurrentTextColor();
+
         init(context, attrs);
 
         setOnClickListener(view -> setToggled(!toggled));
     }
 
-    private void init(Context context, @Nullable AttributeSet attrs) {
+    private void init(@NonNull Context context, @Nullable AttributeSet attrs) {
         TypedArray arr = context.getTheme()
                 .obtainStyledAttributes(attrs, R.styleable.IconToggleButton, 0, 0);
 
@@ -51,22 +59,22 @@ public class IconToggleButton extends AppCompatButton {
 
             setTextColorOn(arr.getColor(
                 R.styleable.IconToggleButton_textColorOn,
-                0
+                defaultColor
             ));
 
             setTextColorOff(arr.getColor(
                 R.styleable.IconToggleButton_textColorOff,
-                0
+                defaultColor
             ));
 
             setIconTintOn(arr.getColor(
                 R.styleable.IconToggleButton_iconTintOn,
-                0
+                defaultColor
             ));
 
             setIconTintOff(arr.getColor(
                 R.styleable.IconToggleButton_iconTintOff,
-                0
+                defaultColor
             ));
 
             setToggled(arr.getBoolean(R.styleable.IconToggleButton_toggled, false));
@@ -131,10 +139,8 @@ public class IconToggleButton extends AppCompatButton {
     }
 
     public void setTextColorOn(int textColorOn) {
-        if (textColorOn != 0) {
-            this.textColorOn = textColorOn;
-            update();
-        }
+        this.textColorOn = textColorOn;
+        update();
     }
 
     public int getTextColorOff() {
@@ -142,10 +148,8 @@ public class IconToggleButton extends AppCompatButton {
     }
 
     public void setTextColorOff(int textColorOff) {
-        if (textColorOff != 0) {
-            this.textColorOff = textColorOff;
-            update();
-        }
+        this.textColorOff = textColorOff;
+        update();
     }
 
     public int getIconTintOn() {
@@ -153,10 +157,8 @@ public class IconToggleButton extends AppCompatButton {
     }
 
     public void setIconTintOn(int iconTintOn) {
-        if (iconTintOn != 0) {
-            iconOn.setTint(iconTintOn);
-            update();
-        }
+        iconOn.setTint(iconTintOn);
+        update();
     }
 
     public int getIconTintOff() {
@@ -164,10 +166,8 @@ public class IconToggleButton extends AppCompatButton {
     }
 
     public void setIconTintOff(int iconTintOff) {
-        if (iconTintOn != 0) {
-            iconOff.setTint(iconTintOff);
-            update();
-        }
+        iconOff.setTint(iconTintOff);
+        update();
     }
 
     public boolean isToggled() {
@@ -176,7 +176,6 @@ public class IconToggleButton extends AppCompatButton {
 
     public void setToggled(boolean toggled) {
         this.toggled = toggled;
-
         update();
     }
 }
