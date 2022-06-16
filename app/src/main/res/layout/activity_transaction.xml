@@ -57,7 +57,100 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            style="@style/SelectorButton"
+            android:id="@+id/btn_account"
+            android:hint="Select Account"
+            android:layout_marginTop="@dimen/edge_margin"
+            android:drawableStart="@drawable/ic_accounts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            style="@style/SelectorButton"
+            android:id="@+id/btn_envelope"
+            android:hint="Select Envelope"
+            android:drawableStart="@drawable/ic_envelope"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_account" />
+
+        <Button
+            style="@style/SelectorButton"
+            android:id="@+id/btn_vendor"
+            android:hint="Select Vendor"
+            android:layout_marginTop="@dimen/edge_margin"
+            android:drawableStart="@drawable/ic_vendors"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_envelope" />
+
+        <io.github.simonakers.envelo.view.custom.IconToggleButton
+            android:id="@+id/tgl_outflow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+
+            app:textOff="Outflow"
+            app:textOn="Inflow"
+            app:iconOff="@drawable/ic_arrow_out"
+            app:iconOn="@drawable/ic_arrow_in"
+
+            app:textColorOn="@color/highlight"
+            app:iconTintOn="@color/highlight"
+
+            app:layout_constraintEnd_toStartOf="@+id/tgl_one_time"
+            app:layout_constraintStart_toStartOf="@id/btn_vendor"
+            app:layout_constraintTop_toBottomOf="@+id/btn_vendor" />
+
+        <io.github.simonakers.envelo.view.custom.IconToggleButton
+            android:id="@+id/tgl_one_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+
+            app:textOff="One-time"
+            app:textOn="Recurring"
+            app:iconOff="@drawable/ic_recur_no"
+            app:iconOn="@drawable/ic_recur"
+
+            app:textColorOn="@color/highlight"
+            app:iconTintOn="@color/highlight"
+
+            app:layout_constraintEnd_toEndOf="@id/btn_vendor"
+            app:layout_constraintStart_toEndOf="@id/tgl_outflow"
+            app:layout_constraintTop_toBottomOf="@+id/btn_vendor" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            style="@style/FloatingActionButton"
+            android:contentDescription="@string/desc_fab_funds"
+            android:src="@drawable/ic_check"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/edge_margin_plus"
+
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+
+            android:drawablePadding="@dimen/edge_margin_small"
+            android:minLines="4"
+            android:hint="Notes"
+            android:background="@drawable/bg_notes"
+            android:padding="10dp"
+            android:textSize="14sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tgl_outflow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

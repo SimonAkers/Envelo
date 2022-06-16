@@ -2,7 +2,6 @@ package io.github.simonakers.envelo.view;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -28,6 +27,7 @@ public class TransactionActivity extends AppCompatActivity {
         setupKeypad();
 
         options = findViewById(R.id.options);
+        options.setVisibility(View.GONE);
 
         edtAmount.requestFocus();
     }
@@ -42,6 +42,9 @@ public class TransactionActivity extends AppCompatActivity {
         if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
+    /**
+     * Sets up the keypad and amount edit text.
+     */
     @SuppressLint("ClickableViewAccessibility")
     private void setupKeypad() {
         edtAmount = findViewById(R.id.edt_amount);
@@ -56,7 +59,9 @@ public class TransactionActivity extends AppCompatActivity {
         edtAmount.setOnFocusChangeListener((view, hasFocus) -> {
             if (hasFocus) {
                 showView(keypad);
+                hideView(options);
             } else {
+                showView(options);
                 hideView(keypad);
             }
         });
@@ -66,23 +71,25 @@ public class TransactionActivity extends AppCompatActivity {
         keypad.setOnConfirmListener(view -> edtAmount.clearFocus());
     }
 
+    /**
+     * Shows the given view with a sliding animation.
+     *
+     * @param view the view to show
+     */
     private void showView(View view) {
         if (view.getVisibility() != View.VISIBLE) view.setVisibility(View.VISIBLE);
 
         view.animate().translationY(0).setDuration(300);
     }
 
+    /**
+     * Hides the given view with a sliding animation.
+     *
+     * @param view the view to hide
+     */
     private void hideView(View view) {
         view.animate().translationY(getWindow().getDecorView().getHeight()).setDuration(300);
     }
-
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.top_bar_edit, menu);
-        return true;
-    }
-     */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

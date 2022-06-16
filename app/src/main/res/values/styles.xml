@@ -50,4 +50,13 @@
         <item name="android:gravity">center</item>
         <item name="android:weightSum">3</item>
     </style>
+
+    <style name="SelectorButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/edge_margin</item>
+        <item name="android:layout_marginEnd">@dimen/edge_margin</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/highlight</item>
+    </style>
 </resources>

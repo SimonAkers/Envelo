@@ -4,4 +4,18 @@
         <attr name="iconSize" format="dimension" />
         <attr name="iconSpacing" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="IconToggleButton">
+        <attr name="textOn" format="string" />
+        <attr name="textOff" format="string" />
+        <attr name="textColorOn" format="color" />
+        <attr name="textColorOff" format="color" />
+
+        <attr name="iconOn" format="reference" />
+        <attr name="iconOff" format="reference" />
+        <attr name="iconTintOn" format="color" />
+        <attr name="iconTintOff" format="color" />
+
+        <attr name="toggled" format="boolean" />
+    </declare-styleable>
 </resources>
