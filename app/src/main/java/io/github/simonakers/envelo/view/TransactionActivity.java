@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import io.github.simonakers.envelo.R;
 import io.github.simonakers.envelo.view.custom.NumberKeypad;
@@ -16,6 +17,7 @@ import io.github.simonakers.envelo.view.custom.NumberKeypad;
 public class TransactionActivity extends AppCompatActivity {
     EditText edtAmount;
     NumberKeypad keypad;
+    ConstraintLayout options;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class TransactionActivity extends AppCompatActivity {
 
         setupToolbar();
         setupKeypad();
+
+        options = findViewById(R.id.options);
 
         edtAmount.requestFocus();
     }
@@ -51,9 +55,9 @@ public class TransactionActivity extends AppCompatActivity {
 
         edtAmount.setOnFocusChangeListener((view, hasFocus) -> {
             if (hasFocus) {
-                showKeypad();
+                showView(keypad);
             } else {
-                hideKeypad();
+                hideView(keypad);
             }
         });
 
@@ -62,14 +66,14 @@ public class TransactionActivity extends AppCompatActivity {
         keypad.setOnConfirmListener(view -> edtAmount.clearFocus());
     }
 
-    private void showKeypad() {
-        if (keypad.getVisibility() != View.VISIBLE) keypad.setVisibility(View.VISIBLE);
+    private void showView(View view) {
+        if (view.getVisibility() != View.VISIBLE) view.setVisibility(View.VISIBLE);
 
-        keypad.animate().translationY(0).setDuration(300);
+        view.animate().translationY(0).setDuration(300);
     }
 
-    private void hideKeypad() {
-        keypad.animate().translationY(keypad.getHeight()).setDuration(300);
+    private void hideView(View view) {
+        view.animate().translationY(getWindow().getDecorView().getHeight()).setDuration(300);
     }
 
     /*

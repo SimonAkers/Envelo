@@ -32,31 +32,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/shadow_up"
+        app:layout_constraintTop_toBottomOf="@id/edt_amount" />
+
     <io.github.simonakers.envelo.view.custom.NumberKeypad
         android:id="@+id/keypad"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/bg_keypad"
-        android:elevation="@dimen/elevation_normal"
         android:visibility="gone"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_amount" />
+        app:layout_constraintTop_toBottomOf="@id/divider" />
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/options"
         android:layout_width="match_parent"
+
         android:layout_height="0dp"
-
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_amount">
+        app:layout_constraintTop_toBottomOf="@id/divider">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@drawable/shadow_up"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
