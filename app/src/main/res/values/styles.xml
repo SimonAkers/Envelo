@@ -21,6 +21,7 @@
         <item name="android:background">@color/toolbar</item>
         <item name="android:minHeight">?attr/actionBarSize</item>
         <item name="android:theme">?attr/actionBarTheme</item>
+        <item name="android:elevation">@dimen/elevation_normal</item>
     </style>
 
     <style name="ToolbarTop.Envelo" parent="ToolbarTop">
@@ -37,8 +38,16 @@
     </style>
 
     <style name="NumberKeypadTextButton" parent="NumberKeypadButton">
-        <item name="android:textSize">48sp</item>
+        <item name="android:textSize">40sp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="NumberKeypadRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:weightSum">3</item>
     </style>
 </resources>

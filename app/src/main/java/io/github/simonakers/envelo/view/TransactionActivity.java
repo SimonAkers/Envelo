@@ -51,15 +51,25 @@ public class TransactionActivity extends AppCompatActivity {
 
         edtAmount.setOnFocusChangeListener((view, hasFocus) -> {
             if (hasFocus) {
-                keypad.setVisibility(View.VISIBLE);
+                showKeypad();
             } else {
-                keypad.setVisibility(View.GONE);
+                hideKeypad();
             }
         });
 
         keypad.connectEditText(edtAmount);
 
         keypad.setOnConfirmListener(view -> edtAmount.clearFocus());
+    }
+
+    private void showKeypad() {
+        if (keypad.getVisibility() != View.VISIBLE) keypad.setVisibility(View.VISIBLE);
+
+        keypad.animate().translationY(0).setDuration(300);
+    }
+
+    private void hideKeypad() {
+        keypad.animate().translationY(keypad.getHeight()).setDuration(300);
     }
 
     /*

@@ -2,6 +2,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <size android:height="1dp"/>
-    <solid android:color="@color/separator_faint" />
+    <size android:height="10dp"/>
+    <solid android:color="?android:colorBackground" />
 </shape>
