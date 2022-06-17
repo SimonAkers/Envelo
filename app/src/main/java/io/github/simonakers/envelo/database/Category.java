@@ -4,15 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.room.*;
 
 @Entity
-public class Envelope {
+public class Category {
     @PrimaryKey
     @NonNull
     public String name;
 
+    public int type;
+
     public float amount;
 
-    public Envelope(@NonNull String name, float amount) {
+    public Category(@NonNull String name, int type, float amount) {
         this.name = name;
+        this.type = type;
         this.amount = amount;
     }
 }
