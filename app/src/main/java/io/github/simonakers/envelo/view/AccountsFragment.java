@@ -2,11 +2,6 @@ package io.github.simonakers.envelo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,20 +9,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+
 import io.github.simonakers.envelo.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FundsFragment#newInstance} factory method to
+ * Use the {@link AccountsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FundsFragment extends Fragment implements Toolbar.OnMenuItemClickListener {
+public class AccountsFragment extends Fragment implements Toolbar.OnMenuItemClickListener {
     private final View.OnClickListener onClickFab = v -> {
-        Intent intent = new Intent(getContext(), NewTransactionActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(getContext(), NewTransactionActivity.class);
+        //startActivity(intent);
     };
 
-    public FundsFragment() {
+    public AccountsFragment() {
         // Required empty public constructor
     }
 
@@ -35,10 +34,10 @@ public class FundsFragment extends Fragment implements Toolbar.OnMenuItemClickLi
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment FundsFragment.
+     * @return A new instance of fragment AccountsFragment.
      */
-    public static FundsFragment newInstance() {
-        FundsFragment fragment = new FundsFragment();
+    public static AccountsFragment newInstance() {
+        AccountsFragment fragment = new AccountsFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

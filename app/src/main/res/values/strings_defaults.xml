@@ -5,4 +5,5 @@
     <string name="default_envelope">Envelope</string>
     <string name="default_amount">0.00</string>
     <string name="default_date">Weekday, DD Month YYYY</string>
+    <string name="default_category">Category</string>
 </resources>
