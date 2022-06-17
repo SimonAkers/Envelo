@@ -4,15 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.room.*;
 
 @Entity
-public class Account {
+public class Vendor {
     @PrimaryKey
     @NonNull
     public String name;
 
-    public float amount;
-
-    public Account(@NonNull String name, float amount) {
+    public Vendor(@NonNull String name) {
         this.name = name;
-        this.amount = amount;
     }
 }
