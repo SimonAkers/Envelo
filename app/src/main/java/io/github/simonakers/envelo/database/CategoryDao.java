@@ -9,6 +9,9 @@ public interface CategoryDao {
     @Query("SELECT * FROM Category")
     List<Category> getAll();
 
+    @Query("SELECT * FROM Category WHERE type LIKE :type")
+    List<Category> getType(int type);
+
     @Query("SELECT * FROM Category WHERE name LIKE :name LIMIT 1")
     Category fromName(String name);
 
