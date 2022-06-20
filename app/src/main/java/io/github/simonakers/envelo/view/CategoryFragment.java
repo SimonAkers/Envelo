@@ -43,8 +43,14 @@ public class CategoryFragment extends Fragment implements Toolbar.OnMenuItemClic
      *
      * @return A new instance of fragment CategoryFragment.
      */
-    public static CategoryFragment newInstance() {
-        return new CategoryFragment();
+    public static CategoryFragment newInstance(int categoryType) {
+        CategoryFragment fragment = new CategoryFragment();
+        Bundle args = new Bundle();
+
+        args.putInt("categoryType", categoryType);
+        fragment.setArguments(args);
+
+        return fragment;
     }
 
     @Override
@@ -66,7 +72,8 @@ public class CategoryFragment extends Fragment implements Toolbar.OnMenuItemClic
         RecyclerView recycler = view.findViewById(R.id.recycler);
 
         BudgetDatabase budget = ((App) requireActivity().getApplication()).getBudget();
-        List<Category> items = budget.categoryDao().getAll();
+        int categoryType = requireArguments().getInt("categoryType");
+        List<Category> items = budget.categoryDao().getAll(categoryType);
 
         CategoryAdapter adapter = new CategoryAdapter(getContext(), items);
         recycler.setLayoutManager(new LinearLayoutManager(getContext()));

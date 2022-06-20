@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/funds"
+    <item android:id="@+id/tb_funds"
         android:title="@string/menu_funds_title"
         android:icon="@drawable/ic_funds"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/accounts"
+    <item android:id="@+id/tb_accounts"
         android:title="@string/menu_accounts_title"
         android:icon="@drawable/ic_accounts"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/envelopes"
+    <item android:id="@+id/tb_envelopes"
         android:title="@string/menu_envelopes_title"
         android:icon="@drawable/ic_envelope"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/vendors"
+    <item android:id="@+id/tb_vendors"
         android:title="@string/menu_vendors_title"
         android:icon="@drawable/ic_vendors"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/analytics"
+    <item android:id="@+id/tb_analytics"
         android:title="@string/menu_analytics_title"
         android:icon="@drawable/ic_analytics"
         app:showAsAction="ifRoom"/>

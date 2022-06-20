@@ -6,6 +6,9 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Category {
+    public static final int TYPE_ENVELOPE = 0;
+    public static final int TYPE_ACCOUNT = 1;
+
     @PrimaryKey
     @NonNull
     public String name;

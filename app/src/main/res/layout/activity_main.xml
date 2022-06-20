@@ -28,7 +28,7 @@
         app:menu="@menu/bottom_bar" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/fragment"
         android:name="io.github.simonakers.envelo.view.FundsFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"

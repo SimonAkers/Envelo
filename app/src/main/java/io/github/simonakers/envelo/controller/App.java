@@ -19,7 +19,10 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        budget = Room.databaseBuilder(this, BudgetDatabase.class, "budget").build();
+        budget = Room.databaseBuilder(this, BudgetDatabase.class, "budget")
+            .allowMainThreadQueries() // TODO: Put queries on own thread (use LiveData?)
+            .build();
+
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
     }
 
