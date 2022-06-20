@@ -72,8 +72,10 @@
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/activity_sign_in.xml" value="0.24166666666666667" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/activity_transaction.xml" value="0.33" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/adapter_account.xml" value="0.24097222222222223" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/adapter_category.xml" value="0.24166666666666667" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/adapter_money_category.xml" value="0.25" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/adapter_transaction.xml" value="0.33" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/fragment_category.xml" value="0.24166666666666667" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/fragment_funds.xml" value="0.22" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/fragment_list.xml" value="0.24097222222222223" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/layout/fragment_list_dialog.xml" value="0.24097222222222223" />
@@ -87,6 +89,7 @@
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/menu/top_bar_funds.xml" value="0.3569230769230769" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/menu/top_bar_main.xml" value="0.3625" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/menu/top_bar_new_transaction.xml" value="0.24097222222222223" />
+        <entry key="..\:/repo/shayes/Envelo/app/src/main/res/menu/top_bar_search.xml" value="0.24166666666666667" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/menu/top_bar_settings.xml" value="0.3625" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/xml/fragment_settings.xml" value="0.33" />
         <entry key="..\:/repo/shayes/Envelo/app/src/main/res/xml/settings.xml" value="0.3614583333333333" />

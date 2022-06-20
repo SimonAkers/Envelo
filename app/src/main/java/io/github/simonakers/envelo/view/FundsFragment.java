@@ -54,7 +54,7 @@ public class FundsFragment extends Fragment implements Toolbar.OnMenuItemClickLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_fab, container, false);
+        return inflater.inflate(R.layout.recycler_fab, container, false);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class FundsFragment extends Fragment implements Toolbar.OnMenuItemClickLi
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.top_bar_funds, menu);
+        inflater.inflate(R.menu.top_bar_search, menu);
     }
 
     @Override
