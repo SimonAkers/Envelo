@@ -1,6 +1,5 @@
 package io.github.simonakers.envelo.database;
 
-import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -9,26 +8,30 @@ public class Category {
     public static final int TYPE_ENVELOPE = 0;
     public static final int TYPE_ACCOUNT = 1;
 
-    @PrimaryKey
-    @NonNull
+    @PrimaryKey(autoGenerate = true)
+    public int id;
+
     public String name;
 
     public int type;
 
     public float amount;
 
-    public Category(@NonNull String name, int type, float amount) {
+    public Category(String name, int type, float amount) {
         this.name = name;
         this.type = type;
         this.amount = amount;
     }
 
-    @NonNull
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
