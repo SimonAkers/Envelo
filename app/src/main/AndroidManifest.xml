@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="io.github.simonakers.envelo">
 
     <application
@@ -9,13 +10,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Envelo">
+        android:theme="@style/Theme.Envelo"
+        tools:ignore="LockedOrientationActivity">
+        <activity
+            android:name=".view.NewCategoryActivity"
+            android:screenOrientation="sensorPortrait"
+            android:exported="false" />
         <activity
             android:name=".view.NewTransactionActivity"
+            android:screenOrientation="sensorPortrait"
             android:exported="false" />
         <activity
             android:name=".view.SettingsActivity"
             android:exported="false"
+            android:screenOrientation="sensorPortrait"
             android:theme="@style/Theme.Envelo.AccentColor" />
         <activity
             android:name=".view.MainActivity"

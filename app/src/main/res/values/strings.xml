@@ -33,10 +33,16 @@
     <string name="menu_settings_title">Settings</string>
     <string name="menu_search_title">Search</string>
     <string name="menu_edit_title">Edit</string>
+    <string name="menu_delete_title">Delete</string>
     <string name="menu_transaction_title">Transaction</string>
     <string name="menu_new_transaction_title">New Transaction</string>
     <string name="menu_edit_transaction_title">Edit Transaction</string>
-    <string name="menu_delete_title">Delete</string>
+    <string name="menu_new_category_title">New Category</string>
+    <string name="menu_edit_category_title">Edit Category</string>
+    <string name="menu_new_account_title">New Account</string>
+    <string name="menu_edit_account_title">Edit Account</string>
+    <string name="menu_new_envelope_title">New Envelope</string>
+    <string name="menu_edit_envelope_title">Edit Envelope</string>
 
     <!-- Settings activity -->
     <string name="settings_category_backup_title">Drive Backups</string>
