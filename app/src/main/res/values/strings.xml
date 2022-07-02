@@ -65,6 +65,7 @@
     <string name="settings_import_summary">Import budget data from a previously exported .TSV file.</string>
 
     <!-- Transaction activity -->
+    <string name="transaction_sel_date">Select Date</string>
     <string name="transaction_sel_account">Select Account</string>
     <string name="transaction_sel_envelope">Select Envelope</string>
     <string name="transaction_sel_vendor">Select Vendor</string>

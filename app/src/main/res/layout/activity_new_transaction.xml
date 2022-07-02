@@ -49,13 +49,23 @@
 
         <Button
             style="@style/SelectorButton"
+            android:id="@+id/btn_date"
+            android:hint="@string/transaction_sel_date"
+            android:layout_marginTop="@dimen/edge_margin"
+            android:drawableStart="@drawable/ic_calendar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            style="@style/SelectorButton"
             android:id="@+id/btn_account"
             android:hint="@string/transaction_sel_account"
             android:layout_marginTop="@dimen/edge_margin"
             android:drawableStart="@drawable/ic_accounts"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/btn_date" />
 
         <Button
             android:id="@+id/btn_envelope"

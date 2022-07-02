@@ -4,19 +4,30 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import java.time.LocalDate;
+
 import io.github.simonakers.envelo.R;
+import io.github.simonakers.envelo.util.LocalDateUtils;
 import io.github.simonakers.envelo.view.custom.NumberKeypad;
 
 public class NewTransactionActivity extends AppCompatActivity {
     EditText edtAmount;
     NumberKeypad keypad;
     ConstraintLayout options;
+
+    Button btnDate;
+    Button btnAccount;
+    Button btnEnvelope;
+    Button btnVendor;
+
+    DatePickerFragment dateFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +36,15 @@ public class NewTransactionActivity extends AppCompatActivity {
 
         setupToolbar();
         setupKeypad();
+        setupButtons();
 
         options = findViewById(R.id.options);
         options.setVisibility(View.GONE);
 
         edtAmount.requestFocus();
+
+        dateFragment = new DatePickerFragment();
+        dateFragment.setListener(this::setDateText);
     }
 
     /**
@@ -71,6 +86,24 @@ public class NewTransactionActivity extends AppCompatActivity {
         keypad.setOnConfirmListener(view -> edtAmount.clearFocus());
     }
 
+    private void setupButtons() {
+        btnDate = findViewById(R.id.btn_date);
+        btnAccount = findViewById(R.id.btn_account);
+        btnEnvelope = findViewById(R.id.btn_envelope);
+        btnVendor = findViewById(R.id.btn_vendor);
+
+        btnDate.setOnClickListener(this::onClickDate);
+        btnAccount.setOnClickListener(this::onClickAccount);
+        btnEnvelope.setOnClickListener(this::onClickEnvelope);
+        btnVendor.setOnClickListener(this::onClickVendor);
+
+        setDateText(LocalDate.now());
+    }
+
+    private void setDateText(LocalDate date) {
+        btnDate.setText(LocalDateUtils.formatFull(date));
+    }
+
     /**
      * Shows the given view with a sliding animation.
      *
@@ -95,5 +128,21 @@ public class NewTransactionActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) finish();
         return true;
+    }
+
+    private void onClickDate(View view) {
+        dateFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
+    private void onClickAccount(View view) {
+
+    }
+
+    private void onClickEnvelope(View view) {
+
+    }
+
+    private void onClickVendor(View view) {
+
     }
 }
