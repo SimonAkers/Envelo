@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +28,7 @@ import io.github.simonakers.envelo.view.adapters.CategoryAdapter;
  * Use the {@link CategoryFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CategoryFragment extends Fragment implements Toolbar.OnMenuItemClickListener {
+public class CategoryFragment extends Fragment implements MenuProvider {
     private final View.OnClickListener onClickFab = v -> {
         //Intent intent = new Intent(getContext(), NewTransactionActivity.class);
         //startActivity(intent);
@@ -56,7 +57,6 @@ public class CategoryFragment extends Fragment implements Toolbar.OnMenuItemClic
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
     }
 
     @Override
@@ -81,6 +81,17 @@ public class CategoryFragment extends Fragment implements Toolbar.OnMenuItemClic
     }
 
     @Override
+    public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+
+    }
+
+    @Override
+    public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+        return false;
+    }
+
+    /*
+    @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.top_bar_search, menu);
     }
@@ -89,4 +100,5 @@ public class CategoryFragment extends Fragment implements Toolbar.OnMenuItemClic
     public boolean onMenuItemClick(MenuItem item) {
         return false;
     }
+     */
 }

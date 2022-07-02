@@ -2,27 +2,29 @@ package io.github.simonakers.envelo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.navigation.NavigationView;
 
 import io.github.simonakers.envelo.R;
 import io.github.simonakers.envelo.database.Category;
 
-public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
-
+public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, MenuProvider {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        addMenuProvider(this);
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         setSupportActionBar(findViewById(R.id.toolbar_top));
@@ -35,13 +37,13 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.top_bar_main, menu);
-        return true;
+    public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+        Log.v("shay", "inflating");
+        menuInflater.inflate(R.menu.top_bar_main, menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onMenuItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.settings) {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
@@ -61,11 +63,14 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
+        int id = item.getItemId();
 
-        if (item.getItemId() == R.id.tb_funds) {
-            fragment = CategoryFragment.newInstance(Category.TYPE_ENVELOPE);
-        } else if (item.getItemId() == R.id.tb_accounts) {
+        if (id == R.id.tb_funds) {
+            fragment = FundsFragment.newInstance();
+        } else if (id == R.id.tb_accounts) {
             fragment = CategoryFragment.newInstance(Category.TYPE_ACCOUNT);
+        } else if (id == R.id.tb_envelopes) {
+            fragment = CategoryFragment.newInstance(Category.TYPE_ENVELOPE);
         }
 
         if (fragment != null) {
@@ -74,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                 .setReorderingAllowed(true)
                 .commit();
         }
-        
+
         return true;
     }
 }

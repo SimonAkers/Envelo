@@ -5,8 +5,12 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,7 +25,7 @@ import io.github.simonakers.envelo.R;
  * Use the {@link FundsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FundsFragment extends Fragment implements Toolbar.OnMenuItemClickListener {
+public class FundsFragment extends Fragment implements MenuProvider {
     private final View.OnClickListener onClickFab = v -> {
         Intent intent = new Intent(getContext(), NewTransactionActivity.class);
         startActivity(intent);
@@ -38,16 +42,12 @@ public class FundsFragment extends Fragment implements Toolbar.OnMenuItemClickLi
      * @return A new instance of fragment FundsFragment.
      */
     public static FundsFragment newInstance() {
-        FundsFragment fragment = new FundsFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
+        return new FundsFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
     }
 
     @Override
@@ -60,15 +60,19 @@ public class FundsFragment extends Fragment implements Toolbar.OnMenuItemClickLi
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         view.findViewById(R.id.fab).setOnClickListener(onClickFab);
+
+        requireActivity().addMenuProvider(this, getViewLifecycleOwner(), Lifecycle.State.RESUMED);
     }
 
     @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+    public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        Log.v("shay", "inflating333");
         inflater.inflate(R.menu.top_bar_search, menu);
     }
 
     @Override
-    public boolean onMenuItemClick(MenuItem item) {
+    public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+        Log.v("shay", menuItem.toString());
         return false;
     }
 }
