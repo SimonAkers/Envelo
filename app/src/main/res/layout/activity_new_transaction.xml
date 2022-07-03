@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/menu_new_transaction_title" />
 
-    <io.github.simonakers.envelo.view.custom.CurrencyEditText
+    <net.shayes.envelo.view.custom.CurrencyEditText
         android:id="@+id/edt_amount"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -86,7 +86,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_envelope" />
 
-        <io.github.simonakers.envelo.view.custom.IconToggleButton
+        <net.shayes.envelo.view.custom.IconToggleButton
             android:id="@+id/tgl_outflow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
             app:layout_constraintStart_toStartOf="@id/btn_vendor"
             app:layout_constraintTop_toBottomOf="@+id/btn_vendor" />
 
-        <io.github.simonakers.envelo.view.custom.IconToggleButton
+        <net.shayes.envelo.view.custom.IconToggleButton
             android:id="@+id/tgl_one_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -154,7 +154,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <io.github.simonakers.envelo.view.custom.NumberKeypad
+    <net.shayes.envelo.view.custom.NumberKeypad
         android:id="@+id/keypad"
         android:layout_width="match_parent"
         android:layout_height="0dp"

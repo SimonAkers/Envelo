@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="io.github.simonakers.envelo">
+    package="net.shayes.envelo">
 
     <application
-        android:name=".controller.App"
+        android:name="net.shayes.envelo.controller.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,24 +13,24 @@
         android:theme="@style/Theme.Envelo"
         tools:ignore="LockedOrientationActivity">
         <activity
-            android:name=".view.NewCategoryActivity"
+            android:name="net.shayes.envelo.view.NewCategoryActivity"
             android:screenOrientation="sensorPortrait"
             android:exported="false" />
         <activity
-            android:name=".view.NewTransactionActivity"
+            android:name="net.shayes.envelo.view.NewTransactionActivity"
             android:screenOrientation="sensorPortrait"
             android:exported="false" />
         <activity
-            android:name=".view.SettingsActivity"
+            android:name="net.shayes.envelo.view.SettingsActivity"
             android:exported="false"
             android:screenOrientation="sensorPortrait"
             android:theme="@style/Theme.Envelo.AccentColor" />
         <activity
-            android:name=".view.MainActivity"
+            android:name="net.shayes.envelo.view.MainActivity"
             android:exported="false"
             android:screenOrientation="sensorPortrait" />
         <activity
-            android:name=".view.SignInActivity"
+            android:name="net.shayes.envelo.view.SignInActivity"
             android:exported="true"
             android:screenOrientation="sensorPortrait"
             android:theme="@style/Theme.App.starting">
