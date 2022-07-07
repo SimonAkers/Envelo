@@ -12,6 +12,9 @@ public interface VendorDao {
     @Query("SELECT * FROM Vendor WHERE name LIKE :name LIMIT 1")
     Vendor fromName(String name);
 
+    @Query("SELECT * FROM Vendor WHERE id LIKE :id LIMIT 1")
+    Vendor fromID(int id);
+
     @Insert
     void insert(Vendor vendor);
 

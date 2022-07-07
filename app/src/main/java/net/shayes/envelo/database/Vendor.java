@@ -5,7 +5,9 @@ import androidx.room.*;
 
 @Entity
 public class Vendor {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    public int id;
+
     @NonNull
     public String name;
 
