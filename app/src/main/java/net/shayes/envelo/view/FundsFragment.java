@@ -8,7 +8,6 @@ import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -64,13 +63,11 @@ public class FundsFragment extends Fragment implements MenuProvider {
 
     @Override
     public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        Log.v("shay", "inflating333");
         inflater.inflate(R.menu.top_bar_search, menu);
     }
 
     @Override
     public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-        Log.v("shay", menuItem.toString());
         return false;
     }
 }

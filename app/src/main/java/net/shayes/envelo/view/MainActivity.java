@@ -2,7 +2,6 @@ package net.shayes.envelo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
     @Override
     public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
-        Log.v("shay", "inflating");
         menuInflater.inflate(R.menu.top_bar_main, menu);
     }
 
