@@ -18,15 +18,7 @@
 
     <net.shayes.envelo.view.custom.CurrencyEditText
         android:id="@+id/edt_amount"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@null"
-        android:ems="10"
-        android:paddingHorizontal="20dp"
-        android:textSize="52sp"
-        android:textAlignment="textEnd"
-        android:singleLine="true"
-        android:scrollHorizontally="true"
+        style="@style/CurrencyEditText"
 
         app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toStartOf="parent"

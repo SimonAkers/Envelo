@@ -75,4 +75,9 @@
     <string name="transaction_onetime">One-time</string>
     <string name="transaction_recurring">Recurring</string>
     <string name="transaction_notes">Notes</string>
+
+    <!-- Category activity -->
+    <string name="category_name">Category Name</string>
+    <string name="category_account_name">Account Name</string>
+    <string name="category_envelope_name">Envelope Name</string>
 </resources>
