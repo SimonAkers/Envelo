@@ -77,6 +77,7 @@
     <string name="transaction_notes">Notes</string>
 
     <!-- Category activity -->
+    <string name="category_credit">Credit</string>
     <string name="category_name">Category Name</string>
     <string name="category_account_name">Account Name</string>
     <string name="category_envelope_name">Envelope Name</string>
