@@ -31,8 +31,8 @@ public class NewCategoryActivity extends AppCompatActivity {
         type = getIntent().getIntExtra("categoryType", 0);
     }
 
-    private void onClickFab(View view) {
-        String name = edtName.getText().toString();
-
+    public void onClickFab(View view) {
+        //String name = edtName.getText().toString();
+        finish();
     }
 }

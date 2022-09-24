@@ -1,5 +1,6 @@
 package net.shayes.envelo.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -28,11 +29,6 @@ import net.shayes.envelo.view.adapters.CategoryAdapter;
  * create an instance of this fragment.
  */
 public class CategoryFragment extends Fragment implements MenuProvider {
-    private final View.OnClickListener onClickFab = v -> {
-        //Intent intent = new Intent(getContext(), NewTransactionActivity.class);
-        //startActivity(intent);
-    };
-
     public CategoryFragment() {
         // Required empty public constructor
     }
@@ -53,6 +49,11 @@ public class CategoryFragment extends Fragment implements MenuProvider {
         return fragment;
     }
 
+    public void onClickFab(View view) {
+        Intent intent = new Intent(getContext(), NewCategoryActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +67,7 @@ public class CategoryFragment extends Fragment implements MenuProvider {
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        view.findViewById(R.id.fab).setOnClickListener(onClickFab);
+        view.findViewById(R.id.fab).setOnClickListener(this::onClickFab);
 
         RecyclerView recycler = view.findViewById(R.id.recycler);
 
